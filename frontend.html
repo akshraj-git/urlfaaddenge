@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StayNear</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#0f0f0f;
+--card:#1c1c1c;
+--accent:#e50914;
+--sub:#b3b3b3;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+body{
+background:var(--bg);
+color:white;
+}
+nav{
+position:fixed;
+width:100%;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+transition:.3s;
+z-index:1000;
+}
+nav.scrolled{
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(8px);
+}
+nav h1{
+color:var(--accent);
+}
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+nav ul li{
+cursor:pointer;
+transition:.3s;
+}
+nav ul li:hover{
+color:var(--accent);
+}
+.hero{
+height:100vh;
+background:linear-gradient(to right,rgba(0,0,0,.8),rgba(0,0,0,.2)),
+url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5') center/cover no-repeat;
+display:flex;
+align-items:center;
+padding:0 60px;
+}
+.hero h2{
+font-size:54px;
+margin-bottom:20px;
+}
+.hero p{
+color:var(--sub);
+margin-bottom:30px;
+}
+.hero button{
+padding:12px 30px;
+background:var(--accent);
+border:none;
+color:white;
+border-radius:4px;
+cursor:pointer;
+}
+.section{
+padding:80px 60px;
+}
+.section h3{
+margin-bottom:40px;
+}
+.filter-panel{
+background:#141414;
+padding:20px;
+border-radius:8px;
+margin-bottom:40px;
+display:flex;
+gap:20px;
+}
+.filter-panel select{
+padding:8px 15px;
+background:var(--card);
+color:white;
+border:none;
+border-radius:4px;
+}
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+gap:25px;
+}
+.card{
+background:var(--card);
+border-radius:8px;
+overflow:hidden;
+transition:.3s;
+}
+.card img{
+width:100%;
+height:170px;
+object-fit:cover;
+}
+.card-content{
+padding:15px;
+}
+.card:hover{
+transform:scale(1.05);
+}
+footer{
+text-align:center;
+padding:40px;
+color:#777;
+}
+</style>
+</head>
+<body>
+
+<nav>
+<h1>StayNear</h1>
+<ul>
+<li><a href="#stays" style="color:white;text-decoration:none;">PGs</a></li>
+<li><a href="#services" style="color:white;text-decoration:none;">Services</a></li>
+<li>Login</li>
+</ul>
+</nav>
+
+<section class="hero">
+<div>
+<h2>Find Your Perfect Student Stay</h2>
+<p>Verified PGs, Hostels & Survival Services in One Platform.</p>
+<button onclick="document.getElementById('stays').scrollIntoView()">Explore Now</button>
+</div>
+</section>
+
+<section class="section" id="stays">
+<h3>Available Stays</h3>
+
+<div class="filter-panel">
+<select>
+<option>Price</option>
+<option>₹5000-₹7000</option>
+<option>₹7000-₹9000</option>
+</select>
+
+<select>
+<option>Type</option>
+<option>PG</option>
+<option>Hostel</option>
+</select>
+</div>
+
+<div class="card-grid">
+<a href="details.html" style="text-decoration:none;color:white;">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+<div class="card-content">
+<h4>Sunrise PG</h4>
+<p>₹7000/month • WiFi • Food</p>
+</div>
+</div>
+</a>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688">
+<div class="card-content">
+<h4>Urban Hostel</h4>
+<p>₹6000/month • AC</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="services">
+<h3>Student Survival Services</h3>
+<div class="card-grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952">
+<div class="card-content">
+<h4>QuickWash Laundry</h4>
+<p>Affordable washing</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+<div class="card-content">
+<h4>Fast Bites</h4>
+<p>Late night food</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+© 2026 StayNear
+</footer>
+
+<script>
+window.addEventListener("scroll",function(){
+document.querySelector("nav").classList.toggle("scrolled",window.scrollY>50);
+});
+</script>
+
+</body>
+</html>

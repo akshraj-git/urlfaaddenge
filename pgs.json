@@ -1,0 +1,34 @@
+[
+{
+"id":1,
+"name":"Sunrise PG",
+"price":7000,
+"location":"metro",
+"type":"pg",
+"amenities":["wifi","food"],
+"image":"https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+"description":"Comfortable PG near metro with food and WiFi."
+},
+
+{
+"id":2,
+"name":"Urban Hostel",
+"price":6000,
+"location":"college",
+"type":"hostel",
+"amenities":["ac"],
+"image":"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+"description":"Affordable hostel near college campus."
+},
+
+{
+"id":3,
+"name":"Student Nest PG",
+"price":8000,
+"location":"metro",
+"type":"pg",
+"amenities":["wifi","ac","food"],
+"image":"https://images.unsplash.com/photo-1493809842364-78817add7ffb",
+"description":"Premium PG with AC rooms and daily meals."
+}
+]

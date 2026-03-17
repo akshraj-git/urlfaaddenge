@@ -69,12 +69,11 @@ pgContainer.appendChild(card)
 }
 
 window.onload=loadPGs
-
 function applyFilters(){
 
 let search = document.getElementById("searchBar").value.toLowerCase()
 let price = document.getElementById("priceFilter").value
-let distance = document.getElementById("distanceFilter").value
+let location = document.getElementById("locationFilter").value
 let type = document.getElementById("typeFilter").value
 let amenity = document.getElementById("amenityFilter").value
 
@@ -84,8 +83,8 @@ let filtered = allPGs.filter(pg=>{
 if(search && !pg.name.toLowerCase().includes(search))
 return false
 
-// DISTANCE
-if(distance !== "all" && pg.distance !== distance)
+// LOCATION (distance)
+if(location !== "all" && pg.location !== location)
 return false
 
 // TYPE
@@ -104,6 +103,7 @@ return false
 }
 
 return true
+
 })
 
 renderPGs(filtered)

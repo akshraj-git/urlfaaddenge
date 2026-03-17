@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StayNear</title>
+<link rel="stylesheet" href="../css/frontendstyles.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">StayNear</div>
+<ul class="nav-links">
+<li><a href="#stays">PGs</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="#" onclick="openAuth()">Login</a></li>
+</ul>
+</nav>
+
+<div id="authModal" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeAuth()">×</span>
+
+<form id="loginForm" class="auth-form">
+<h2>Login</h2>
+<input type="email" id="loginEmail" placeholder="Email">
+<input type="password" id="loginPassword" placeholder="Password">
+<button type="button" onclick="loginUser()">Login</button>
+<p onclick="showSignup()">Sign Up</p>
+</form>
+
+<form id="signupForm" class="auth-form hidden">
+<h2>Signup</h2>
+<input id="signupName" placeholder="Name">
+<input id="signupEmail" placeholder="Email">
+<input id="signupPhone" placeholder="Phone">
+<input id="signupPassword" type="password" placeholder="Password">
+<input id="signupConfirm" type="password" placeholder="Confirm Password">
+<button type="button" onclick="signupUser()">Signup</button>
+<p onclick="showLogin()">Login</p>
+</form>
+
+</div>
+</div>
+
+<section class="hero">
+<h2>Find Your Stay</h2>
+<button onclick="scrollToStays()">Explore</button>
+</section>
+
+<section id="stays" class="section">
+<h3>Available PGs</h3>
+<div class="filter-panel">
+
+<input type="text" id="searchBar" placeholder="Search PG..." onkeyup="applyFilters()">
+
+<select id="priceFilter" onchange="applyFilters()">
+<option value="all">Price</option>
+<option value="5000-7000">₹5000-₹7000</option>
+<option value="7000-9000">₹7000-₹9000</option>
+</select>
+
+<select id="distanceFilter" onchange="applyFilters()">
+<option value="all">Distance</option>
+<option value="near">Near College</option>
+<option value="metro">Near Metro</option>
+</select>
+
+<select id="typeFilter" onchange="applyFilters()">
+<option value="all">Type</option>
+<option value="pg">PG</option>
+<option value="hostel">Hostel</option>
+</select>
+
+<select id="amenityFilter" onchange="applyFilters()">
+<option value="all">Amenities</option>
+<option value="wifi">WiFi</option>
+<option value="food">Mess</option>
+<option value="ac">AC</option>
+</select>
+
+</div>
+<div class="card-grid" id="pgContainer"></div>
+</section>
+
+<script src="../js/frontendscript.js"></script>
+
+</body>
+</html>
